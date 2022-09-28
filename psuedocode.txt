@@ -1,0 +1,15 @@
+IMPORT random
+
+load_word:
+READ text file of words (all lines)
+SET text file to words list
+SET secret word as RANDOM choice from words list
+RETURN secret word
+
+spaceman:
+INPUT ask the player to guess one letter
+GET guessed letter
+
+is_word_guessed:
+FOR guessed letter IN secret word
+    CHECK if guessed letter is in secret word
