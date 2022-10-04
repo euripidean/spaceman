@@ -188,7 +188,10 @@ def spaceman(secret_word): # pylint: disable=redefined-outer-name
      greater than 7, failure message.
     """
     guess_count = 0
+    global letters_guessed # pylint: disable=global-statement,invalid-name
     letters_guessed = [] # pylint: disable=redefined-outer-name
+    global alphabet # pylint: disable=global-statement,invalid-name
+    alphabet = list(string.ascii_lowercase) # pylint: disable=redefined-outer-name
     print(f'Your secret word has {len(secret_word)} letters.\n')
 
     while not is_word_guessed(secret_word,letters_guessed):
@@ -218,6 +221,7 @@ def spaceman(secret_word): # pylint: disable=redefined-outer-name
         display()
 
     success_message(secret_word)
+    play_again()
 
 #These function calls that will start the game
 secret_word = load_word()
